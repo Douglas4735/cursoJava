@@ -161,12 +161,13 @@ public class Aluno {
 		}else {
 			return false;
 		}
+		/*
 		public String getAlunoAprovado() {
 			double media = this.getMediaNota();
 			if(media >= 70) {
 				return "Aprovado";
 			}else {
 				return "Reprovado";
-			}
+			}*/
 	}
 }
