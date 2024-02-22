@@ -18,7 +18,7 @@ public class Aluno {
 	private double nota2;
 	private double nota3;
 	private double nota4;
-	private double nota5;
+	
 	
 	
 	public double getNota1() {
