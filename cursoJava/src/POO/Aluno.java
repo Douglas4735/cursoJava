@@ -1,5 +1,7 @@
 package POO;
 
+import java.util.Objects;
+
 /*Esta e nossa classe / objeto que representa o aluno*/
 public class Aluno {
 	
@@ -14,13 +16,18 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	private double nota1;
-	private double nota2;
-	private double nota3;
-	private double nota4;
+	private String escola;
 	
+	private Disciplina disciplina = new Disciplina();
 	
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
 	
+
 	public double getNota1() {
 		return nota1;
 	}
@@ -147,10 +154,19 @@ public class Aluno {
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
+	
 	/* metodo que retorna a media do aluno*/
 	
+	public String getEscola() {
+		return escola;
+	}
+
+	public void setEscola(String escola) {
+		this.escola = escola;
+	}
+
 	public double getMediaNota() {
-		return (nota1 + nota2 + nota3 + nota4) / 4;
+		return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
 	}
 	/*metodo que retorna true para Aluno aprovado e false para reprovado*/
 	
@@ -161,13 +177,15 @@ public class Aluno {
 		}else {
 			return false;
 		}
-		/*
-		public String getAlunoAprovado() {
-			double media = this.getMediaNota();
-			if(media >= 70) {
-				return "Aprovado";
-			}else {
-				return "Reprovado";
-			}*/
+		
 	}
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGerel="
+				+ registroGerel + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", escola=" + escola + ", disciplina=" + disciplina + "]";
+	}
+
+	
 }

@@ -23,9 +23,18 @@ public class PrimeiraClasseJava {
 		String pai = JOptionPane.showInputDialog("Nome do pai?");
 		String matricula = JOptionPane.showInputDialog("Matricula?");
 		String serie = JOptionPane.showInputDialog("Qual a serie?");
+		String escola = JOptionPane.showInputDialog("Nome Escola?");
+		
+		String disciplina1 = JOptionPane.showInputDialog("Disciplina1?");
 		String nota1 = JOptionPane.showInputDialog("nota1");
+		
+		String disciplina2 = JOptionPane.showInputDialog("Disciplina2?");
 		String nota2 = JOptionPane.showInputDialog("nota2");
+		
+		String disciplina3 = JOptionPane.showInputDialog("Disciplina3?");
 		String nota3 = JOptionPane.showInputDialog("nota3");
+		
+		String disciplina4 = JOptionPane.showInputDialog("Disciplina4?");
 		String nota4 = JOptionPane.showInputDialog("nota4");
 		
 		
@@ -41,56 +50,44 @@ public class PrimeiraClasseJava {
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNota1(Double.parseDouble(nota1));
-		aluno1.setNota2(Double.parseDouble(nota2));
-		aluno1.setNota3(Double.parseDouble(nota3));
-		aluno1.setNota4(Double.parseDouble(nota4));
+		aluno1.setEscola(escola);
 		
-		System.out.println("Nome aluno é: " + aluno1.getNome());
-		System.out.println("Idade aluno é: " + aluno1.getIdade());
-		System.out.println("Data de nascimento do aluno é: " + aluno1.getDataNascimento());
-		System.out.println("RG do aluno é: " + aluno1.getRegistroGerel());
-		System.out.println("CPF do aluno é: " + aluno1.getNumeroCpf());
-		System.out.println("Nome da mãe aluno é: " + aluno1.getNomeMae());
-		System.out.println("Nome do pai do aluno é: " + aluno1.getNomePai());
-		System.out.println("Data da matricula do aluno é: " + aluno1.getDataMatricula());
-		System.out.println("Serie do aluno é: " + aluno1.getSerieMatriculado());
-		System.out.println("Média do aluno é : " + aluno1.getMediaNota());
+	
+		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));
+		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));
+		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));
+		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));
+		
+		aluno1.getDisciplina().setDisciplina1(disciplina1);
+		aluno1.getDisciplina().setDisciplina2(disciplina2);
+		aluno1.getDisciplina().setDisciplina3(disciplina3);
+		aluno1.getDisciplina().setDisciplina4(disciplina4);
+		
+		System.out.println(aluno1.toString());/*Descrição do objeto  na memoria*/
+		
+		System.out.println("Media do aluno = " + aluno1.getMediaNota());
 		System.out.println("Resultado = " + aluno1.getAlunoAprovado());
+		
+		
 		System.out.println("---------------------------------------------");
 		
+		
+		/*Equals e Reshcode (Diferenciar objetos)*/
 		/*
+		Aluno aluno1 = new Aluno();
+		aluno1.setNome("douglas");
+		aluno1.setNumeroCpf("123");
+		
 		Aluno aluno2 = new Aluno();
-		aluno2.setNome("fernanda");
-		aluno2.setIdade(25);
-		aluno2.setNota1(70.0);
-		aluno2.setNota2(65);
-		aluno2.setNota3(80.0);
-		aluno2.setNota4(70.0);
+		aluno2.setNome("douglas");
+		aluno2.setNumeroCpf("1234");
 		
-		
-		
-		System.out.println("Nome Aluno2: " + aluno2.getNome());
-		System.out.println("Idade Aluno2 é : " + aluno2.getIdade());
-		System.out.println("Média Aluno2 é : " + aluno2.getMediaNota());
-		System.out.println("Resultado Aluno2 é : " +( aluno2.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
-		
-		System.out.println("---------------------");
-		
-		Aluno aluno3 = new Aluno();
-		aluno3.nome = "Ester";
-		
-		
-		System.out.println("Aluno: " + aluno3.nome);
-		
-		
-		System.out.println("---------------------");
-		
-		Aluno aluno4 = new Aluno("Maria");
-		
-		Aluno aluno5 = new Aluno("josé", 50);*/
-		
-		
+		if (aluno1.equals(aluno2)){
+			System.out.println("Alunos são iguais");
+		}else {
+			System.out.println("Alunos não são iguais");
+		}
+		*/
 	}
 
 }
