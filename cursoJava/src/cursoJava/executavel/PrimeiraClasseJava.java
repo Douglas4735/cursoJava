@@ -72,22 +72,6 @@ public class PrimeiraClasseJava {
 		System.out.println("---------------------------------------------");
 		
 		
-		/*Equals e Reshcode (Diferenciar objetos)*/
-		/*
-		Aluno aluno1 = new Aluno();
-		aluno1.setNome("douglas");
-		aluno1.setNumeroCpf("123");
-		
-		Aluno aluno2 = new Aluno();
-		aluno2.setNome("douglas");
-		aluno2.setNumeroCpf("1234");
-		
-		if (aluno1.equals(aluno2)){
-			System.out.println("Alunos são iguais");
-		}else {
-			System.out.println("Alunos não são iguais");
-		}
-		*/
 	}
 
 }
