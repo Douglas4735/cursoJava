@@ -41,30 +41,30 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		
-		Disciplina disciplina11 = new Disciplina();
-		disciplina11.setDisciplina("Banco de dados");
-		disciplina11.setNota(90);
+		Disciplina disciplina01 = new Disciplina();
+		disciplina01.setDisciplina("Banco de dados");
+		disciplina01.setNota(90);
 		
 		
-		Disciplina disciplina12 = new Disciplina();
-		disciplina12.setDisciplina("Matematiaca");
-		disciplina12.setNota(80);
+		Disciplina disciplina02 = new Disciplina();
+		disciplina02.setDisciplina("Matematiaca");
+		disciplina02.setNota(80);
 		
 		
-		Disciplina disciplina13 = new Disciplina();
-		disciplina13.setDisciplina("Geografia");
-		disciplina13.setNota(97);
+		Disciplina disciplina03 = new Disciplina();
+		disciplina03.setDisciplina("Geografia");
+		disciplina03.setNota(97);
 		
 		
-		Disciplina disciplina14 = new Disciplina();
-		disciplina14.setDisciplina("Java Web");
-		disciplina14.setNota(70);
+		Disciplina disciplina04 = new Disciplina();
+		disciplina04.setDisciplina("Java Web");
+		disciplina04.setNota(70);
 		
 		
-		aluno1.getDisciplinas().add(disciplina11);
-		aluno1.getDisciplinas().add(disciplina12);
-		aluno1.getDisciplinas().add(disciplina13);
-		aluno1.getDisciplinas().add(disciplina14);
+		aluno1.getDisciplinas().add(disciplina01);
+		aluno1.getDisciplinas().add(disciplina02);
+		aluno1.getDisciplinas().add(disciplina03);
+		aluno1.getDisciplinas().add(disciplina04);
 		
 		
 		
