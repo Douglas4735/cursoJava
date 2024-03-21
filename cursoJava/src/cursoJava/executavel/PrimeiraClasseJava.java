@@ -1,7 +1,5 @@
 package cursoJava.executavel;
 
-
-
 import javax.swing.JOptionPane;
 
 import POO.Aluno;
@@ -12,28 +10,25 @@ public class PrimeiraClasseJava {
 	public static void main(String[] args) {
 		
 		
-		/* new Aluno() é uma instancia (Criação de objeto)*/
-		/* aluno1 é uma  referencia  para o objeto aluno*/
-		
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
-		String idade = JOptionPane.showInputDialog("Qual sua idade?");
-		String DataNascimento = JOptionPane.showInputDialog("Data de nascimento?");
+		String idade = JOptionPane.showInputDialog("Qual a idade do aluno?");
+		String dataNascimento = JOptionPane.showInputDialog("data de nascimento do aluno?");
 		String rg = JOptionPane.showInputDialog("Registro geral?");
-		String cpf = JOptionPane.showInputDialog("CPF?");
-		String mae = JOptionPane.showInputDialog("Nome da mãe?");
-		String pai = JOptionPane.showInputDialog("Nome do pai?");
-		String matricula = JOptionPane.showInputDialog("Matricula?");
-		String escola = JOptionPane.showInputDialog("Nome Escola?");
-		String serie = JOptionPane.showInputDialog("Qual a serie?");
+		String cpf = JOptionPane.showInputDialog("CPF do aluno?");
+		String mae = JOptionPane.showInputDialog("Nome da mãe");
+		String pai = JOptionPane.showInputDialog("Nome do pai");
+		String matricula = JOptionPane.showInputDialog("Digite a matricula");
+		String serie = JOptionPane.showInputDialog("Serie matriculada");
+		String escola = JOptionPane.showInputDialog("Nome da Escola");
 		
 		
+		System.out.println("DADOS DO ALUNO1");
+		Aluno aluno1 = new Aluno();                                                                                                                                                                                                                                                                      
 		
-		Aluno aluno1 = new Aluno();
-		
-		aluno1.setNome(nome); 
-		aluno1.setIdade(Integer.valueOf(idade));
-		aluno1.setDataNascimento(DataNascimento);
-		aluno1.setRegistroGerel(rg);
+		aluno1.setNome(nome);
+		aluno1.setIdade(Integer.valueOf(6));
+		aluno1.setDataNascimento(dataNascimento);
+		aluno1.setRegistroGeral(rg);
 		aluno1.setNumeroCpf(cpf);
 		aluno1.setNomeMae(mae);
 		aluno1.setNomePai(pai);
@@ -41,40 +36,34 @@ public class PrimeiraClasseJava {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		
-		Disciplina disciplina01 = new Disciplina();
-		disciplina01.setDisciplina("Banco de dados");
-		disciplina01.setNota(90);
+		for (int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("nome da disciplina "+pos+"?");
+		
+			String notaDisciplina = JOptionPane.showInputDialog("nota da disciplina "+pos+"?");
+			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+		}
+		
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
+		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a diciplina 1, 2, 3 ou 4 ?");
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue()-1);
+		}
+		
+		System.out.println(aluno1.toString());/*Descrição do objeto na memoria*/
+		System.out.println("Média do aluno: " +aluno1.getMediaNota());
+		System.out.println("Resultado: " +aluno1.getAlunoAprovado());
 		
 		
-		Disciplina disciplina02 = new Disciplina();
-		disciplina02.setDisciplina("Matematiaca");
-		disciplina02.setNota(80);
-		
-		
-		Disciplina disciplina03 = new Disciplina();
-		disciplina03.setDisciplina("Geografia");
-		disciplina03.setNota(97);
-		
-		
-		Disciplina disciplina04 = new Disciplina();
-		disciplina04.setDisciplina("Java Web");
-		disciplina04.setNota(70);
-		
-		
-		aluno1.getDisciplinas().add(disciplina01);
-		aluno1.getDisciplinas().add(disciplina02);
-		aluno1.getDisciplinas().add(disciplina03);
-		aluno1.getDisciplinas().add(disciplina04);
 		
 		
 		
-		System.out.println(aluno1.toString());/*Descrição do objeto  na memoria*/
-		System.out.println("Media do aluno = " + aluno1.getMediaNota());
-		System.out.println("Resultado = " + aluno1.getAlunoAprovado());
 		
-		
-	
-		
+		}
 	}
-
-}
+	

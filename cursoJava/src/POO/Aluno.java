@@ -6,19 +6,18 @@ import java.util.Objects;
 
 /*Esta e nossa classe / objeto que representa o aluno*/
 public class Aluno {
-	
-	/*Esses sao o atributo do aluno*/
-	private String  nome;
+
+	/* Esses sao o atributo do aluno */
+	private String nome;
 	private int idade;
 	private String dataNascimento;
-	private String registroGerel;
+	private String registroGeral;
 	private String numeroCpf;
 	private String nomeMae;
 	private String nomePai;
 	private String dataMatricula;
-	private String nomeEscola;
 	private String serieMatriculado;
-	
+	private String nomeEscola;
 	
 	private List<Disciplina>  disciplinas = new ArrayList<Disciplina>();
 	
@@ -28,39 +27,38 @@ public class Aluno {
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
-
 	
-	
+	public Aluno() {
 
-	public Aluno() {/*Cria os dados na memoria - Sendo padrão do java*/
-		
 	}
-	
+
 	public Aluno(String nomePadrao) {
 		nome = nomePadrao;
 	}
-	
+
 	public Aluno(String nomePadrao, int idadePadrao) {
 		nome = nomePadrao;
 		idade = idadePadrao;
 	}
-	/*Veremos o metodo SETTERS e GETTERS do Objeto*/
-	/*SET é para adicionar  ou receber  dados para os atributos*/
-	/*GET é para resgatar ou obter o valor do atributo*/
-	
-	public  void setNome(String nome) {
+	/* Veremos o metodo SETTERS e GETTERS do Objeto */
+	/* SET é para adicionar ou receber dados para os atributos */
+	/* GET é para resgatar ou obter o valor do atributo */
+
+	/* Recebe dados */
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getNome() {
 		return nome;
 	}
 
-	public int getIdade() {
-		return idade;
-	}
-
 	public void setIdade(int idade) {
 		this.idade = idade;
+	}
+
+	public int getIdade() {
+		return idade;
 	}
 
 	public String getDataNascimento() {
@@ -71,12 +69,12 @@ public class Aluno {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getRegistroGerel() {
-		return registroGerel;
+	public String getRegistroGeral() {
+		return registroGeral;
 	}
 
-	public void setRegistroGerel(String registroGerel) {
-		this.registroGerel = registroGerel;
+	public void setRegistroGeral(String registroGeral) {
+		this.registroGeral = registroGeral;
 	}
 
 	public String getNumeroCpf() {
@@ -126,40 +124,57 @@ public class Aluno {
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
-	
-	/* metodo que retorna a media do aluno*/
-	
 
+	
+	/*Metodo que retorna a média do aluno*/
 	public double getMediaNota() {
 		
 		double somaNotas = 0.0;
 		
-		for (Disciplina disciplina : disciplinas)
+   		for (Disciplina disciplina : disciplinas) {
 			somaNotas += disciplina.getNota();
-		
-		return somaNotas / disciplinas.size();
-	}
-	/*metodo que retorna true para Aluno aprovado e false para reprovado*/
-	
-	public boolean getAlunoAprovado() {
-		double media = this.getMediaNota();
-		if(media >= 70) {
-			return true;
-		}else {
-			return false;
 		}
-		
+		  
+    		return  somaNotas / disciplinas.size(); 
 	}
+	/*Método que retorna true ou false para reprovado*/
+	public String getAlunoAprovado() {
+		double media = this.getMediaNota();
+		if (media >= 50) {
+			return "Aluno está Aprovado";
+		}else {
+			return "Aluno está Reprovado";
+		}
+	}
+
+	
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGerel="
-				+ registroGerel + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + "]";
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ ", dataMatricula=" + dataMatricula + ", serieMatriculado=" + serieMatriculado + ", nomeEscola="
+				+ nomeEscola + "]";
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, numeroCpf);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		return Objects.equals(nome, other.nome) && Objects.equals(numeroCpf, other.numeroCpf);
 	}
 
 
 
+	
 	
 }
