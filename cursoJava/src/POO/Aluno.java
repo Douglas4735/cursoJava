@@ -18,6 +18,7 @@ public class Aluno {
 	private String dataMatricula;
 	private String serieMatriculado;
 	private String nomeEscola;
+	private String dataNascimento2;
 	
 	private List<Disciplina>  disciplinas = new ArrayList<Disciplina>();
 	
