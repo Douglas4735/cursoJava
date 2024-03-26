@@ -11,7 +11,6 @@ public class aula_12 {
 		String nota3 = JOptionPane.showInputDialog("Informe a nota 3");
 		String nota4 = JOptionPane.showInputDialog("Informe a nota 4");
 		
-		private String nome; 
 		
 		double  dNota1 = Double.parseDouble(nota1);
 		double  dNota2 = Double.parseDouble(nota2);
