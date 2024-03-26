@@ -3,6 +3,7 @@ package aulas_1_semana;
 import javax.swing.JOptionPane;
 
 public class aula_12 {
+	
 	public static void main(String[]args) {
 		
 		String nota1 = JOptionPane.showInputDialog("Informe a nota 1");
